@@ -1,7 +1,6 @@
 import React from "react";
 
 export const ProductRow = (props: any) => {
-    debugger
     const product = props.product
     const name = product.stocked ? product.name :
         <span style={{color: 'red'}}>
