@@ -1,38 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import s from './App.module.css';
+import {SearchBar} from "./components/SearchBar";
+import {ProductTable} from "./components/ProductTable/ProductTable";
+import product from "./components/store";
 
 function App() {
-
-    const PRODUCTS = [
-        {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-        {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-        {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-        {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-        {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-        {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-    ];
-
     return (
-        <div className="App">
-
+        <div className={s.App}>
             <SearchBar/>
-
+            <ProductTable products={product}/>
         </div>
     );
 }
 
+
 export default App;
-
-const SearchBar = () => {
-    return (
-        <form>
-            <input type="text" placeholder="Search..."/>
-            <p>
-                <input type="checkbox"/>
-                {" "} Only show products in stock
-            </p>
-
-        </form>
-    )
-}
